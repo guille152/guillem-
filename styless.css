@@ -1,0 +1,226 @@
+:root {
+    --primary-color: #0077ff;
+    --secondary-color: #00e1ff;
+    --dark-color: #000000;
+    --light-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body {
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+/* Logo (ahora a la derecha) */
+.logo {
+    display: flex;
+    align-items: center;
+    order: 3; /* Posicionado a la derecha */
+}
+
+.brand-name {
+    font-size: 1,5rem;
+    font-weight: bold;
+    color: #2e2e2e;
+}
+
+.highlight {
+    color: var(--primary-color);
+    font-weight: normal;
+}
+
+/* Navegación izquierda */
+.left-nav {
+    display: flex;
+    list-style: none;
+    order: 1; /* Posicionado a la izquierda */
+}
+
+.nav-links li {
+    margin-right: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 500;
+    transition: color 0.3s;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-color);
+}
+
+/* Centro - Idiomas y redes sociales */
+.center-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    order: 0; /* Posicionado en el centro */
+}
+
+.language-selector {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.language-selector a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 500;
+    transition: color 0.3s;
+    font-size: 0.8rem;
+}
+
+.language-selector a.active {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.social-icons {
+    display: flex;
+}
+
+.social-icons a {
+    margin: 0 8px;
+    color: var(--dark-color);
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 0.9rem;
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    background-image: linear-gradient(rgba(6, 85, 255, 0.7), rgba(139, 255, 230, 0.7)), url('/api/placeholder/1600/800');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    margin-top: 70px;
+}
+
+.hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #006a78;
+}
+
+/* Content Section */
+.content {
+    padding: 5rem 0;
+}
+
+/* Footer */
+footer {
+    background-color: white;
+    padding: 3rem 0;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.footer-logo .brand-name {
+    font-size: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .left-nav, .center-nav, .logo {
+        width: 100%;
+        margin-bottom: 10px;
+        order: 0;
+    }
+    
+    .left-nav {
+        flex-wrap: wrap;
+    }
+    
+    .center-nav {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .logo {
+        text-align: center;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .language-selector, .social-icons {
+        margin-bottom: 10px;
+    }
+    
+    .nav-links li {
+        margin-bottom: 10px;
+    }
+}
